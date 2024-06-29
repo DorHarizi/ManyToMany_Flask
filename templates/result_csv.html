@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSV File Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>CSV File Result</h2>
+        <div class="result">
+            <p>Result:</p>
+            <pre>{{ output_csv }}</pre>
+            <a href="{{ url_for('download') }}" class="btn btn-primary">Download Output CSV</a>
+        </div>
+    </div>
+</body>
+</html>
