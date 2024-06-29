@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithm Input</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Many To Many Assignment problem, by improving the Khun-Munkers algorithm with Backtracking.</h1>
+    <!-- Regular user input -->
+        <form method="post" action="/submit">
+            <div class="form-group">
+                <label for="matrix">Matrix (Python list format):</label><br>
+                <textarea id="matrix" name="matrix" rows="5" cols="50" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="agent_vector">Agent Vector (comma separated values):</label><br>
+                <input type="text" id="agent_vector" name="agent_vector" required>
+            </div>
+            <div class="form-group">
+                <label for="task_vector">Task Vector (comma separated values):</label><br>
+                <input type="text" id="task_vector" name="task_vector" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+        <!--  Form for uploading CSV file  -->
+          <form method="post" action="/upload" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="csv_file">Upload CSV File:</label>
+                <input type="file" id="csv_file" name="csv_file" accept=".csv" required>
+            </div>
+            <input type="submit" value="Upload CSV">
+
+          </form>
+
+        <hr>
+
+        <h3>Description of the Algorithm</h3>
+        <p>
+            The algorithm is an improvement of the Khun-Munkers algorithm, which is used to solve the assignment problem.
+            The assignment problem is a combinatorial optimization problem that consists of finding the best assignment of agents to tasks.
+            Our improvement consists of using backtracking to find the optimal solution, while alloing each agent to be assigned to multiple tasks,
+            and each task to be assigned to multiple agents.
+        </p>
+
+        <hr>
+
+        <h3> Programmers</h3>
+        <p>
+            The programmers of the algorithm are: <br>
+            - <a>Tom Shabalin</a> <br>
+            - <a>Dor Harizi</a> <br>
+        </p>
+
+        <hr>
+
+        <h3> Authors of the paper</h3>
+        <p>
+            The authors of the paper are: <br>
+            - <a>Haibin Zhu</a> <br>
+            - <a>Dongning Liu</a> <br>
+            - <a>Siqin Zhang</a> <br>
+            - <a>Yu Zhu</a> <br>
+            - <a>Luyao Teng</a> <br>
+            - <a>Shaohua Teng</a> <br>
+        </p>
+    </div>
+</body>
+</html>
