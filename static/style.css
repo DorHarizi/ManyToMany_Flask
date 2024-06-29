@@ -56,3 +56,17 @@ pre {
     background-color: #6c757d; /* Bootstrap secondary color */
     border: 1px solid #6c757d;
 }
+
+.btn-sm-left {
+    display: inline-block;
+    width: auto;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    margin-right: 10px;
+}

@@ -13,18 +13,19 @@
         <form method="post" action="/submit">
             <div class="form-group">
                 <label for="matrix">Matrix (Python list format):</label><br>
-                <textarea id="matrix" name="matrix" rows="5" cols="50" required></textarea>
+                <textarea id="matrix" name="matrix" rows="3" cols="52" required placeholder="[[3, 0, 1, 2],[2, 3, 0, 1],[3, 0, 1, 2],[1, 0, 2, 3]]"></textarea>
             </div>
             <div class="form-group">
-                <label for="agent_vector">Agent Vector (comma separated values):</label><br>
-                <input type="text" id="agent_vector" name="agent_vector" required>
+                <label for="agent_vector">Agent Vector (Python list format):</label><br>
+                <textarea id="agent_vector" name="agent_vector" rows="1" cols="50" required placeholder="[2,2,2,2]"></textarea>
             </div>
             <div class="form-group">
-                <label for="task_vector">Task Vector (comma separated values):</label><br>
-                <input type="text" id="task_vector" name="task_vector" required>
+                <label for="task_vector">Task Vector (Python list format):</label><br>
+                <textarea id="task_vector" name="task_vector" rows="1" cols="50" required placeholder="[2,2,2,2]"></textarea>
             </div>
             <div class="form-group">
-                <input type="submit" value="Submit">
+                <!-- <input type="submit" value="Submit"> -->
+                 <button type="submit" class="btn btn-sm-left">Submit</button>
             </div>
         </form>
 
@@ -34,7 +35,10 @@
                 <label for="csv_file">Upload CSV File:</label>
                 <input type="file" id="csv_file" name="csv_file" accept=".csv" required>
             </div>
-            <input type="submit" value="Upload CSV">
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-sm-left">Upload CSV</button>
+            </div>
+            <!-- <input type="submit" value="Upload CSV"> -->
 
             <!-- Link to view CSV format example -->
             <p>Not sure how to format your CSV? <a href="https://drive.google.com/file/d/1v6aI4HKKHXUL0jn0wVWSfhrvbOBX9gL9/view?usp=sharing" target="_blank">View CSV Format Example</a></p>
