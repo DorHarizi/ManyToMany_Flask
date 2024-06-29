@@ -11,8 +11,13 @@
         <div class="result">
             <p>Result:</p>
             <pre>{{ output_csv }}</pre>
-            <a href="{{ url_for('download') }}" class="btn btn-primary">Download Output CSV</a>
         </div>
+
+        <!-- Return Home Button -->
+         <dev class="button-container">
+            <a href="{{ url_for('download') }}" class="btn btn-primary">Download Output CSV</a>
+            <a href="/" class="btn btn-secondary">Return Home</a>
+        </dev>
     </div>
 </body>
 </html>

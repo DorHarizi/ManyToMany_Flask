@@ -61,7 +61,6 @@ def upload():
                     # Prepare output CSV file
                     output_csv = StringIO()
                     writer = csv.writer(output_csv)
-                    writer.writerow(['Result'])
 
                     for result in results:
                         writer.writerow([result])
