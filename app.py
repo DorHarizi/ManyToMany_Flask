@@ -114,4 +114,4 @@ def download():
         return render_template('index.html', error_message='No output CSV file found')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=4000)
