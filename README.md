@@ -1,7 +1,5 @@
 # Many to Many Assignment Problem
 
-## Authors: Tom Shabalin and Dor Harizi
-
 ## Website URL
 To access the website that is running on the University server, follow this link:\
 https://tomshabalin95.csariel.xyz
