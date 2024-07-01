@@ -9,15 +9,14 @@
     <div class="container">
         <h2>CSV File Result</h2>
         <div class="result">
-            <p>Result:</p>
             <pre>{{ output_csv }}</pre>
         </div>
 
-        <!-- Return Home Button -->
-         <dev class="button-container">
+        <!-- Button Container -->
+        <div class="button-container">
             <a href="{{ url_for('download') }}" class="btn btn-primary">Download Output CSV</a>
             <a href="/" class="btn btn-secondary">Return Home</a>
-        </dev>
+        </div>
     </div>
 </body>
 </html>

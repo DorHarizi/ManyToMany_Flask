@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Algorithm Input</title>
+    <title>Kuhn-Munkers-Backtrack</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -10,45 +10,51 @@
         <h1>Solving the Many To Many Assignment problem, by improving the Khun-Munkers algorithm with Backtracking.</h1>
 
         <!-- Regular user input -->
-        <form method="post" action="/submit">
-            <div class="form-group">
-                <label for="matrix">Matrix (Python list format):</label><br>
-                <textarea id="matrix" name="matrix" rows="3" cols="52" required placeholder="[[3, 0, 1, 2],[2, 3, 0, 1],[3, 0, 1, 2],[1, 0, 2, 3]]"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="agent_vector">Agent Vector (Python list format):</label><br>
-                <textarea id="agent_vector" name="agent_vector" rows="1" cols="50" required placeholder="[2,2,2,2]"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="task_vector">Task Vector (Python list format):</label><br>
-                <textarea id="task_vector" name="task_vector" rows="1" cols="50" required placeholder="[2,2,2,2]"></textarea>
-            </div>
-            <div class="form-group">
-                <!-- <input type="submit" value="Submit"> -->
-                 <button type="submit" class="btn btn-sm-left">Submit</button>
-            </div>
-        </form>
+         <div class="form-container">
+            <h2>Enter Data Manually</h2>
+            <form method="post" action="/submit">
+                <div class="form-group">
+                    <label for="matrix">Matrix (Python list format):</label><br>
+                    <textarea id="matrix" name="matrix" rows="3" required>[[3, 0, 1, 2],[2, 3, 0, 1],[3, 0, 1, 2],[1, 0, 2, 3]]</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="agent_vector">Agent Vector (Python list format):</label><br>
+                    <textarea id="agent_vector" name="agent_vector" rows="1" required>[2,2,2,2]</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="task_vector">Task Vector (Python list format):</label><br>
+                    <textarea id="task_vector" name="task_vector" rows="1" required>[2,2,2,2]</textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                </div>
+            </form>
+        </div>
 
             <!--  Form for uploading CSV file  -->
-          <form method="post" action="/upload" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="csv_file">Upload CSV File:</label>
-                <input type="file" id="csv_file" name="csv_file" accept=".csv" required>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-sm-left">Upload CSV</button>
-            </div>
-            <!-- <input type="submit" value="Upload CSV"> -->
+        <div class="form-container">
+            <h2>Upload CSV File</h2>
+            <form method="post" action="/upload" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="csv_file" class="file-input">
+                        Choose CSV File
+                        <input type="file" id="csv_file" name="csv_file" accept=".csv" required>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-secondary btn-lg">Upload CSV</button>
+                </div>
+            </form>
 
-            <!-- Link to view CSV format example -->
-            <p>Not sure how to format your CSV? <a href="https://drive.google.com/file/d/1v6aI4HKKHXUL0jn0wVWSfhrvbOBX9gL9/view?usp=sharing" target="_blank">View CSV Format Example</a></p>
-          </form>
+          <!-- Link to view CSV format example -->
+          <p class="link">Not sure how to format your CSV? <a href="https://drive.google.com/file/d/1v6aI4HKKHXUL0jn0wVWSfhrvbOBX9gL9/view?usp=sharing" target="_blank">View CSV Format Example</a></p>
+        </div>
 
         <hr>
 
-        <h3>Description of the Algorithm</h3>
-        <p>
-            The algorithm is an improvement of the Khun-Munkers algorithm, which is used to solve the assignment problem.
+        <h3 class="description">Description of the Algorithm</h3>
+        <p class="description">
+            The algorithm is an improvement of the Kuhn-Munkers algorithm, which is used to solve the assignment problem.
             The assignment problem is a combinatorial optimization problem that consists of finding the best assignment of agents to tasks.
             Our improvement consists of using backtracking to find the optimal solution, while alloing each agent to be assigned to multiple tasks,
             and each task to be assigned to multiple agents.
@@ -56,18 +62,18 @@
 
         <hr>
 
-        <h3> Programmers</h3>
-        <p>
-            The programmers of the algorithm are: <br>
+        <h3 class="authors">Programmers</h3>
+        <p class="authors">
+            The programmers of the algorithm are: <br> <br>
             - <a>Tom Shabalin</a> <br>
             - <a>Dor Harizi</a> <br>
         </p>
 
         <hr>
 
-        <h3> Authors of the paper</h3>
-        <p>
-            The authors of the paper are: <br>
+        <h3 class="authors">Authors of the Paper</h3>
+        <p class="authors">
+            The authors of the paper are: <br> <br>
             - <a>Haibin Zhu</a> <br>
             - <a>Dongning Liu</a> <br>
             - <a>Siqin Zhang</a> <br>
@@ -77,10 +83,19 @@
         </p>
 
         <hr>
-        <h3> Link to the Research Paper</h3>
-        <p>
+
+        <h3 class="link">Link to the Research Paper</h3>
+        <p class="link">
             The paper can be found <a href="https://www.sciencedirect.com/science/article/pii/S0304397516000037?ref=pdf_download&fr=RR-2&rr=89b507c2ff53e3cf" target="_blank">here</a>.
         </p>
+
+        <!-- Author section -->
+        <footer class="author-section">
+            <hr>
+            <p class="author">Created by Tom Shabalin</p>
+            <p class="author-description">Feel free to contact me at <a href="mailto:tomshabalin95@gmail.com">tomshabalin95@gmail.com</a></p>
+            <p class="author-description">Check out the <a href="https://github.com/MightyArty/ManyToMany_Flask/blob/main/many_to_many_assignment.py" target="_blank">Algorithm Implementation</a></p>
+        </footer>
     </div>
 </body>
 </html>
