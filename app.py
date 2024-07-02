@@ -18,8 +18,9 @@ def process_data(matrix_str, agent_vector_str, task_vector_str):
     assignments = kuhn_munkers_backtracking(matrix, agent_vector, task_vector)
     
     total_sum = 0
-    for agent, task in assignments.items():
-        total_sum += matrix[agent, task[0]] + matrix[agent, task[1]]
+    for agent, tasks in assignments.items():
+        for task in tasks:
+            total_sum += matrix[agent, task]
         
     return assignments, total_sum
 
@@ -57,8 +58,8 @@ def upload():
 
                     if matrix_str and agent_vector_str and task_vector_str:
                         # Process data
-                        output = process_data(matrix_str, agent_vector_str, task_vector_str)
-                        results.append(output)
+                        assignments, total_sum = process_data(matrix_str, agent_vector_str, task_vector_str)
+                        results.append((assignments, total_sum))
                     else:
                         break  # Exit the loop if any of the required fields is missing
 
@@ -66,9 +67,10 @@ def upload():
                     # Prepare output CSV file
                     output_csv = StringIO()
                     writer = csv.writer(output_csv)
+                    writer.writerow(['Assignments', 'Total Sum'])
 
-                    for result in results:
-                        writer.writerow([result])
+                    for assignments, total_sum in results:
+                        writer.writerow([assignments, total_sum])
 
                     output_csv.seek(0)
 
@@ -98,7 +100,8 @@ def result_csv():
     output_csv_path = session.get('output_csv_path', None)
     if output_csv_path:
         with open(output_csv_path, 'r', newline='') as file:
-            output_csv = file.read()
+            csv_reader = csv.DictReader(file)
+            output_csv = [row for row in csv_reader]
         return render_template('result_csv.html', output_csv=output_csv)
     else:
         return render_template('index.html', error_message='No output CSV file found')
