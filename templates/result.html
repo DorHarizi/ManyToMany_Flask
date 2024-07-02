@@ -8,8 +8,23 @@
 <body>
     <div class="container">
         <h2>Algorithm Result</h2>
+
         <div class="result">
+            <p>Assignments:</p>
             <pre>{{ result }}</pre>
+            <p>Total Cost:</p>
+            <p>{{ total_sum }}</p>
+        </div>
+
+        <!-- Explanation of the Algorithm -->
+        <div class="explanation">
+            <h3>Explanation of Total Cost Calculation</h3>
+            <p>The total cost is the minimum among all the possible assignments for the agents and the tasks.</p>
+            <p>The total cost is calculated by summing up the values from the original matrix based on the assignments made:</p>
+            <ul>
+                <li>For each assignment, the value from the matrix corresponding to the agent and task pair is added.</li>
+                <li>This sum represents the total cost of the assignments.</li>
+            </ul>
         </div>
 
         <!-- Return Home Button -->

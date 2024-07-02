@@ -15,8 +15,13 @@ def process_data(matrix_str, agent_vector_str, task_vector_str):
     matrix = np.array(literal_eval(matrix_str))
     agent_vector = np.array(literal_eval(agent_vector_str))
     task_vector = np.array(literal_eval(task_vector_str))
-    result = kuhn_munkers_backtracking(matrix, agent_vector, task_vector)
-    return result
+    assignments = kuhn_munkers_backtracking(matrix, agent_vector, task_vector)
+    
+    total_sum = 0
+    for agent, task in assignments.items():
+        total_sum += matrix[agent, task[0]] + matrix[agent, task[1]]
+        
+    return assignments, total_sum
 
 @app.route('/')
 def index():
@@ -29,8 +34,8 @@ def submit():
         agent_vector_str = request.form.get('agent_vector')
         task_vector_str = request.form.get('task_vector')
         if matrix_str and agent_vector_str and task_vector_str:
-            output = process_data(matrix_str, agent_vector_str, task_vector_str)
-            return render_template('result.html', result=output)
+            assignments, total_sum = process_data(matrix_str, agent_vector_str, task_vector_str)
+            return render_template('result.html', result=assignments, total_sum=total_sum)
         else:
             return render_template('index.html', error_message='Please provide all required fields')
 
