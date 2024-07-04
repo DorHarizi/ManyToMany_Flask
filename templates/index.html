@@ -14,20 +14,49 @@
 
         <hr>
 
+        <section class="instructions">
+            <h2> How to build the input</h2>
+            <p>
+                To solve the many-to-many assignment problem, you need to provide a cost matrix and two vectors: the agent vector and the task vector. Here’s how you can format these inputs:
+            </p>
+            <h3>Matrix</h3>
+            <p>
+                The matrix should be a list of lists in Python format, where each sublist represents the costs associated with each agent-task pair.
+            </p>
+            <h3>Agent Vector</h3>
+            <p>
+                The agent vector is a list of integers, where each integer represents the number of tasks an agent can perform.
+            </p>
+            <h3>Task Vector</h3>
+            <p>
+                The task vector is a list of integers, where each integer represents the number of agents required to perform a task.
+            </p>
+            <hr>
+            <p>
+                The sum of the agent vector should be equal or greater than the sum of the task vector.
+            </p>
+            <hr>
+            <p>
+                Use these formats when entering data manually or uploading a CSV file.
+            </p>
+        </section>
+
+        <hr>
+
         <!-- Regular user input -->
          <div class="form-container">
             <h2>Enter Data Manually</h2>
             <form method="post" action="/submit">
                 <div class="form-group">
-                    <label for="matrix">Matrix (Python list format):</label><br>
+                    <label for="matrix">Matrix:</label><br>
                     <textarea id="matrix" name="matrix" rows="3" required>[[3, 0, 1, 2],[2, 3, 0, 1],[3, 0, 1, 2],[1, 0, 2, 3]]</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="agent_vector">Agent Vector (Python list format):</label><br>
+                    <label for="agent_vector">Agent Vector:</label><br>
                     <textarea id="agent_vector" name="agent_vector" rows="1" required>[2,2,2,2]</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="task_vector">Task Vector (Python list format):</label><br>
+                    <label for="task_vector">Task Vector:</label><br>
                     <textarea id="task_vector" name="task_vector" rows="1" required>[2,2,2,2]</textarea>
                 </div>
                 <div class="form-group">

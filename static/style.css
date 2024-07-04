@@ -211,3 +211,27 @@ pre {
 .link a:hover {
     text-decoration: underline;
 }
+
+.instructions {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.instructions h2, .instructions h3 {
+    color: #343a40;
+}
+
+.instructions p {
+    color: #6c757d;
+    font-size: 1em;
+}
+
+.instructions pre {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.9em;
+}
