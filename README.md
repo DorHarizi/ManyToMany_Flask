@@ -67,4 +67,4 @@ After uploading the csv file, you will be redirected to another page where the r
 
 
 For any questions, you can contact me directly via my email:\
-tomshabalin95@gmail.com
+dorharizi2@gmail.com
